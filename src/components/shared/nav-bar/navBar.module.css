@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  height: 60px;
+  flex: none;
+  width: 100%;
+}
+.startButton,
+.andButton{
+  width: 36px;
+  display: grid;
+  place-content: center;
+}

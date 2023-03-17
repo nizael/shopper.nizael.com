@@ -1,0 +1,18 @@
+.textField{
+  background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 36px;
+  background-color: var(--cl-light-primary);
+  border-radius: var(--br-xl);
+  box-shadow: 1px 2px 8px rgb(219, 219, 219);
+  -webkit-box-shadow: 1px 2px 8px rgb(219, 219, 219);
+  -moz-box-shadow: 1px 2px 8px rgb(219, 219, 219);
+}
+.textField input {
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+  padding: 0 .5rem 0 1rem;
+}

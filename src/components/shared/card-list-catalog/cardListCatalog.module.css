@@ -1,0 +1,31 @@
+.cardListCatalog {
+  display: flex;
+  align-items: center;
+  background-color: var(--cl-light-primary);
+  box-shadow: 1px 2px 8px rgb(219, 219, 219);
+  -webkit-box-shadow: 1px 2px 8px rgb(219, 219, 219);
+  -moz-box-shadow: 1px 2px 8px rgb(219, 219, 219);
+  border-radius: var(--br-sm);
+  gap: .75rem;
+}
+  .cardListCatalog img {
+    width: 104px;
+    height: 104px;
+    border-radius: var(--br-sm) 0 0 var(--br-sm);
+    flex: none;
+
+  }
+
+  .buttonFloat {
+    position: relative;
+    background-color: antiquewhite;
+
+  }
+
+  .itemData {
+    gap: .18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }

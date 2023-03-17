@@ -1,0 +1,46 @@
+.layout {
+  width: min(100%, 768px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--cl-light-secondary);
+}
+
+.tabBar {
+  height: 63px;
+  flex: none;
+  border-radius: var(--br-lg) var(--br-lg) 0 0;
+  background-color: var(--cl-light-primary);
+  box-shadow: 0px -2px 8px  rgb(219, 219, 219);
+  -webkit-box-shadow: 0px -2px 8px  rgb(219, 219, 219);
+  -moz-box-shadow: 0px -2px 8px  rgb(219, 219, 219);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button {
+  width: 55px;
+  height: 50px;
+  display: flex;
+  /* flex: none; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--cl-dark-secondary);
+  border: none;
+  background: none;
+  font-size: 10px;
+  user-select: none;
+  border-radius: var( --br-xs);
+}
+
+.button:hover{
+  background-color: rgba(128, 128, 128, 0.226);
+}
+
+.button~svg {
+  pointer-events: none;
+}

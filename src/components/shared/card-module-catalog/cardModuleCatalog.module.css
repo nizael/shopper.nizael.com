@@ -1,0 +1,25 @@
+.cardModuleCatalog {
+  width: 164px;
+  height: 260px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  gap: .19rem;
+}
+
+.cardModuleCatalog img {
+  width: 164px;
+  height: 184px;
+  border-radius: var(--br-sm);
+
+}
+
+.buttonFloat {
+  position: relative;
+}
+
+.rating {
+  font-size: 10px;
+  color: var(--cl-dark-secondary);
+}
