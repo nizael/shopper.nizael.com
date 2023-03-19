@@ -6,7 +6,7 @@ import { CardCategory, CardPromotion } from './CardCategory'
 export const Content = () => {
   const push = useRouter().push
   function handleClick(){
-    push('/category/catalog')
+    push('/category/catalog/')
   }
   return (
     <div className={styles.content}>

@@ -1,0 +1,30 @@
+.cardOrder {
+  height: 164px;
+  background-color: var(--cl-light-primary);
+  box-shadow: var(--bs);
+  -webkit-box-shadow: var(--bs);
+  -moz-box-shadow: var(--bs);
+  padding: 1rem;
+  border-radius: var(--br-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+
+}
+
+.smFrame {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.smFrame:nth-child(1) {
+  align-items: flex-end;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react"
 import styles from './list.module.css'
 interface List {
-  children: PropsWithChildren
+  children?: PropsWithChildren
   onClick?(): void
 }
 type Ul = React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>;

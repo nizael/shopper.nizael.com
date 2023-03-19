@@ -1,0 +1,27 @@
+.tagPrimary {
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--br-xl);
+  display: grid;
+  place-content: center;
+  user-select: none;
+}
+
+.noSelected:hover {
+  background-color: var(--hv-light-primary);
+}
+
+.selected:hover {
+  background-color: var(--hv-dark-primary);
+}
+
+.selected {
+  background-color: var(--cl-dark-primary);
+  color: var(--cl-light-primary);
+}
+
+.noSelected {
+  color: var(--cl-dark-primary);
+}

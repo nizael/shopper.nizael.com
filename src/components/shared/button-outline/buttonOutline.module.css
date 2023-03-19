@@ -1,0 +1,17 @@
+.buttonOutline{
+  border: 1px solid var(--cl-dark-primary);
+  font-size: 14px;
+  border-radius: var(--br-xl);
+}
+
+.buttonOutline:hover {
+  border-color: var(--hv-dark-primary);
+  color: var(--hv-dark-primary);
+}
+
+.small{
+  width: 160px;
+  height: 36px;
+  font-size: 14px;
+  font-weight: 500;
+}

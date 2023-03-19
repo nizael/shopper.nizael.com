@@ -1,0 +1,16 @@
+
+.menuMore{
+  width: 36px;
+  height: 36px;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-radius: var(--br-round);
+}
+.container {
+  width: 170px;
+  max-width: 300px;
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+}

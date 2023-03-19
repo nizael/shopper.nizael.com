@@ -9,44 +9,49 @@
   gap: .75rem;
 
 }
-  .cardListCatalog img {
-    width: 104px;
-    height: 104px;
-    border-radius: var(--br-sm) 0 0 var(--br-sm);
-    flex: none;
 
-  }
+.cardListCatalog img {
+  width: 104px;
+  height: 104px;
+  border-radius: var(--br-sm) 0 0 var(--br-sm);
+  flex: none;
 
-  .colorSize{
-    display: flex;
-    align-items: center;
-    gap: .25rem;
-  }
-  .amoutPrice{
-    display: flex;
-    /* width: 100%; */
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 1rem;
-  }
-  .numberOfItems{
-    width: 126px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    color: var(--cl-dark-secondary);
-  }
-  .buttonFloat {
-    position: relative;
-    color: var(--cl-dark-secondary);
+}
 
-  }
+.colorSize {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
 
-  .itemData {
-    gap: .25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-  }
+.amoutPrice {
+  display: flex;
+  /* width: 100%; */
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.numberOfItems {
+  width: 126px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--cl-dark-secondary);
+}
+
+.buttonFloat {
+  width: 100%;
+  background-color: aqua;
+  position: relative;
+  color: var(--cl-dark-secondary);
+}
+
+.itemData {
+  gap: .25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}

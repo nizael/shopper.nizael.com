@@ -1,3 +1,4 @@
+'use client'
 import styles from './buttonPrimary.module.css'
 interface ButtonPrimary{
   onClick?(): void
