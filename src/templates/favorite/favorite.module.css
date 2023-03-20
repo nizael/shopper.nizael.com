@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 100%;
+  background-color: var(--cl-light-primary);
+  flex: none;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 1rem;
+  gap: 28px;
+}

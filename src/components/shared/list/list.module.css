@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--cl-dark-secondary);
-  padding-right: 1rem;
+  padding: 0 1rem;
 }
 
 .listView {
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(128, 128, 128, 0.1);
-  padding-right: 1rem;
+  padding: 0 1rem;
   user-select: none;
 }
 

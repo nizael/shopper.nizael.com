@@ -1,4 +1,4 @@
-import { Cart } from "@pages/cart" 
+import { Cart } from "@templates/cart" 
 
 export default function CartPage() {
   return (

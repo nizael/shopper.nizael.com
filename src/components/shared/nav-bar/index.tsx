@@ -1,6 +1,6 @@
 import styles from './navBar.module.css'
 
-import { Headline3 } from '@shared/text';
+import { Headline3 } from '@components/shared/text';
 interface Header {
   startButton?: JSX.Element
   headline?: string

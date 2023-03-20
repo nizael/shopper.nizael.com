@@ -1,4 +1,4 @@
-import { Orders } from "@pages/orders"
+import { Orders } from "@templates/orders"
 
 export default function OrdersPage() {
   return (

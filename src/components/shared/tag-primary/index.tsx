@@ -8,8 +8,6 @@ interface TagPrimary {
 }
 type Div = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 export const TagPrimary = (props: TagPrimary & Omit<Div, 'onClick'>) => {
-  // const [isSelected, setIsSelected] = useState(props.isSelected)
-  // console.log(isSelected)
 
   const tagProps = { ...props }
   const keysTagPrimary: (keyof TagPrimary)[] = ['onClick', 'isSelected', 'label']
