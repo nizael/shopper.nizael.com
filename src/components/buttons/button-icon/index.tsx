@@ -17,7 +17,7 @@ export const ButtonIcon = (props: TabButton & Omit<Button, 'onClick'>) => {
 
   function handleClick() {
     if (props.onClick)
-      props?.onClick()
+      props.onClick()
   }
 
   return (

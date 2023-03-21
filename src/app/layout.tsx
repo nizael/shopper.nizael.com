@@ -14,6 +14,7 @@ export default function RootLayout({
         <title>nizael.com</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="icon" href="/assets/favicon.ico" />
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/metropolis" type="text/css"/>
       </head>
       <body>{children}</body>
     </html>

@@ -1,16 +1,10 @@
-// "use client"
 import styles from '../cart.module.css'
 import { BiSearch } from "react-icons/bi";
 import { ButtonIcon } from '@components/buttons/button-icon';
 import { NavBar } from '@components/shared/nav-bar';
 import { Headline1 } from '@components/shared/text';
-// import { usePathname } from 'next/navigation';
-// import { useLayoutStore } from '@stores/layout';
-export const Header = () => {
-  // const [activatedPage, setActivatedPage] = useLayoutStore(s => [s.activatedPage, s.setActivatedPage])
 
-  // const pathname = usePathname().split('/')[1]
-  // if(pathname!== activatedPage) setActivatedPage(pathname)
+export const Header = () => {
 
   return (
     <div className={styles.header}>

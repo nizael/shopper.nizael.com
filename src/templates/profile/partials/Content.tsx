@@ -23,6 +23,7 @@ export const Content = () => {
             description={<HelpText>Já tem 12 pedidos</HelpText>}
           />
           <ListView
+           onClick={() => handleClick('/addresses')}
             headline={<Subheads>Endereços de Envio</Subheads>}
             description={<HelpText>3 endereços</HelpText>}
           />

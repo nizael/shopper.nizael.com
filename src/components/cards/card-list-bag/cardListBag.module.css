@@ -49,7 +49,7 @@
 }
 
 .itemData {
-  gap: .25rem;
+  gap: .5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
