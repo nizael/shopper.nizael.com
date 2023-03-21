@@ -5,7 +5,7 @@ interface TabButton {
   icon: JSX.Element
   onClick?(): void
   isActive?: boolean
-  variant?: 'light' | 'dart'
+  variant?: 'light' | 'dark'
 }
 export const ButtonIcon = (props: TabButton & Omit<Button, 'onClick'>) => {
 

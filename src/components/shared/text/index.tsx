@@ -53,8 +53,10 @@ export const DescriptiveItems = (props: PropsWithChildren & Paragrap) => {
 export const DescriptionText = (props: PropsWithChildren & Paragrap) => {
   return (
     <p
+      className={styles.descriptionText}
       {...props}
-      className={styles.descriptionText}>{props.children}</p>
+
+    >{props.children}</p>
   )
 }
 

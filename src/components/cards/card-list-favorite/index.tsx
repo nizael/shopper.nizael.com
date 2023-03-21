@@ -69,7 +69,7 @@ export const CardListFavorite = (props: CardListFavorite) => {
               bottom: 0,
               transform: 'translateY(60%)',
             }}
-            variant='dart' icon={<BiShoppingBag size={24} />} />
+            variant='dark' icon={<BiShoppingBag size={24} />} />
         </div>
       </div>
 

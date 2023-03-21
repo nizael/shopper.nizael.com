@@ -39,7 +39,7 @@ export const Content = () => {
         value={value}
         onChange={(e) => setValue(e.currentTarget.value)}
         button={<ButtonIcon
-          variant='dart'
+          variant='dark'
           onClick={() => { setValue('') }}
           icon={<IoArrowForward size={24} />}
         />}

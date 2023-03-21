@@ -27,7 +27,7 @@
   background-color: var(--hv-light-primary);
 }
 
-.dart {
+.dark {
   background-color: var(--cl-dark-primary);
   color: var(--cl-light-primary);
   box-shadow:  0px 2px 8px -2px var(--cl-dark-secondary);
@@ -35,6 +35,6 @@
   -moz-box-shadow: 0px 2px 8px -2px var(--cl-dark-secondary);
 }
 
-.dart:hover {
+.dark:hover {
   background-color: var(--hv-dark-primary);
 }

@@ -1,4 +1,4 @@
-import { HelpText } from '@shared/text'
+import { HelpText } from '../text';
 import { MouseEvent, PropsWithChildren } from 'react';
 import styles from './popUpWindow.module.css'
 interface PopUpWindow {
