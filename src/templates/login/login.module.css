@@ -1,0 +1,68 @@
+.login {
+  width: min(100%, 768px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cl-light-secondary);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: none;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  /* justify-content: center; */
+  overflow-y: auto;
+  padding: 3rem 1rem;
+  gap: 5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  gap: 1rem;
+}
+
+.link {
+  color: var(--cl-dark-primary);
+  align-self: self-end;
+  display: flex;
+  align-items: center;
+}
+
+.socialAccount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.frameIpt{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.frameBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.frameSa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}

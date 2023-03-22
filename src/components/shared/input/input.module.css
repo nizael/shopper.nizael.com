@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.input {
+  height: 64px;
+  background-color: var(--cl-light-primary);
+  position: relative;
+  box-shadow: 1px 2px 8px rgb(219, 219, 219);
+  -webkit-box-shadow: 1px 2px 8px rgb(219, 219, 219);
+  -moz-box-shadow: 1px 2px 8px rgb(219, 219, 219);
+  border-radius: var(--br-sm);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.input input {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  height: 100%;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cl-dark-secondary);
+  transition: all .2s;
+}
+
+.alert {
+  font-size: 11px;
+  color: var(--cl-error);
+  align-self: center;
+  display: none;
+}
