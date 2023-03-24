@@ -6,12 +6,27 @@ import { MdFavoriteBorder } from "react-icons/md";
 
 interface CardModuleCatalog {
   onClick?(): void
+  data?: product
 }
-export const CardModuleCatalog = () => {
+
+interface product {
+  id: number
+  name: string
+  color: string
+  size: string
+  price: number
+  imageOfEach: string
+  subcategory: string
+  rating: {
+    percentual: number
+    quantity: number
+  }
+}
+export const CardModuleCatalog = (props: CardModuleCatalog) => {
   return (
     <div className={styles.cardModuleCatalog}>
-      <img src="https://a-static.mlcdn.com.br/1500x1500/camisa-long-baruk-amarela-tam-m/trippy/3bdb947c56ce11edbee34201ac185019/9009d86f41f734ffeb26186934ba6b72.jpeg"
-        alt="Camisa" />
+      <img src={props.data?.imageOfEach}
+        alt={props.data?.name} />
       <div className={styles.buttonFloat}>
         <ButtonIcon
           style={{
@@ -31,9 +46,9 @@ export const CardModuleCatalog = () => {
         <CiStar />
         (10)
       </div>
-      <HelpText>Camisa de manga</HelpText>
-      <Subheads>T-Shirt Saling</Subheads>
-      <DescriptiveItems>R$ 9,99</DescriptiveItems>
+      <HelpText>{props.data?.subcategory}</HelpText>
+      <Subheads>{props.data?.name}</Subheads>
+      <DescriptiveItems>{props.data?.price}</DescriptiveItems>
     </div>
   )
 }
