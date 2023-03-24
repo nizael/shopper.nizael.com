@@ -1,14 +1,16 @@
+'use client'
 import styles from '../product.module.css'
-import { BiSearch } from "react-icons/bi";
 import { ButtonIcon } from '@components/buttons/button-icon';
 import { NavBar } from '@components/shared/nav-bar';
 import { Headline1 } from '@components/shared/text';
 import { BsShareFill } from 'react-icons/bs';
+import { MdOutlineArrowBackIos } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 export const Header = () => {
+  const back = useRouter().back
   return (
     <div className={styles.header}>
-      <NavBar andButton={<ButtonIcon icon={<BsShareFill size={24} />} />} />
-      <Headline1>product</Headline1>
+      <NavBar startButton={<ButtonIcon onClick={back} icon={<MdOutlineArrowBackIos size={24} />} />} headline='product' andButton={<ButtonIcon icon={<BsShareFill size={24} />} />} />
     </div>
   )
 }

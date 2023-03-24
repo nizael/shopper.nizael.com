@@ -15,6 +15,9 @@
   --cl-error: #F01F0E;
   --cl-success: #2AA952;
 
+  --bc-primary: rgba(58, 57, 57, 0.3);
+  --bc-secondary: rgba(58, 57, 57, 0.1);
+
   /* border-radius */
   --br-xs: 4px;
   --br-sm: 8px;

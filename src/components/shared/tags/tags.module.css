@@ -1,4 +1,4 @@
-.tagPrimary {
+.tagSm {
   width: 100px;
   height: 30px;
   font-size: 14px;
@@ -7,6 +7,20 @@
   display: grid;
   place-content: center;
   user-select: none;
+  flex: none;
+}
+
+.tagMd {
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--br-sm);
+  display: grid;
+  place-content: center;
+  user-select: none;
+  flex: none;
+  border: 1px solid var(--bc-primary);
 }
 
 .noSelected:hover {

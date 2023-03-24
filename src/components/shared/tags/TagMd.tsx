@@ -1,13 +1,13 @@
 'use client'
 import { useState } from 'react'
-import styles from './tagPrimary.module.css'
+import styles from './tags.module.css'
 interface TagPrimary {
   onClick?(): void
   isSelected?: boolean
   label: string
 }
 type Div = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-export const TagPrimary = (props: TagPrimary & Omit<Div, 'onClick'>) => {
+export const TagMd = (props: TagPrimary & Omit<Div, 'onClick'>) => {
 
   const tagProps = { ...props }
   const keysTagPrimary: (keyof TagPrimary)[] = ['onClick', 'isSelected', 'label']
@@ -23,7 +23,7 @@ export const TagPrimary = (props: TagPrimary & Omit<Div, 'onClick'>) => {
   return (
     <div
       onClick={handleClick}
-      className={`${styles.tagPrimary} ${styles[props.isSelected ? 'selected' : 'noSelected']}`}
+      className={`${styles.tagMd} ${styles[props.isSelected ? 'selected' : 'noSelected']}`}
       {...tagProps}
     >
       {props.label}

@@ -1,6 +1,6 @@
 'use client'
 import { CardOrder } from '@components/cards/card-order'
-import { TagPrimary } from '@components/shared/tag-primary'
+import { TagSm } from '@components/shared/tags/TagSm'
 import { useState } from 'react'
 import styles from '../orders.module.css'
 import { useOrdersStore } from '@stores/orders'
@@ -15,9 +15,9 @@ export const Content = () => {
   return (
     <>
       <div className={styles.tagsContainer}>
-        <TagPrimary onClick={() => handleClickTag('delivered')} isSelected={selected === 'delivered' ? true : false} label={'Entregues'} />
-        <TagPrimary onClick={() => handleClickTag('processing')} isSelected={selected === 'processing' ? true : false} label={'Processando'} />
-        <TagPrimary onClick={() => handleClickTag('cancelled')} isSelected={selected === 'cancelled' ? true : false} label={'Cancelados'} />
+        <TagSm onClick={() => handleClickTag('delivered')} isSelected={selected === 'delivered' ? true : false} label={'Entregues'} />
+        <TagSm onClick={() => handleClickTag('processing')} isSelected={selected === 'processing' ? true : false} label={'Processando'} />
+        <TagSm onClick={() => handleClickTag('cancelled')} isSelected={selected === 'cancelled' ? true : false} label={'Cancelados'} />
       </div>
       <div className={styles.content}>
         <div className={styles.oderContainer}>

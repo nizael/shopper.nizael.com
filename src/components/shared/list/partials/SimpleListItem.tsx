@@ -1,14 +1,17 @@
 import { PropsWithChildren } from "react";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 import styles from '../list.module.css'
 interface SimpleListItem {
-  children: PropsWithChildren
+  children?: JSX.Element | string
   onClick?(): void
 }
 type Li = React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>;
-export const simpleListItem = (props: SimpleListItem & Omit<Li, 'onClick'>) => {
+
+export const SimpleListItem = (props: SimpleListItem & Omit<Li, 'onClick'>) => {
 
   const liProps = { ...props }
   const keysLiProps: (keyof SimpleListItem)[] = ['children', 'onClick']
+
   for (const att in keysLiProps) {
     delete liProps[keysLiProps[att]]
   }
@@ -19,6 +22,7 @@ export const simpleListItem = (props: SimpleListItem & Omit<Li, 'onClick'>) => {
       {...liProps}
     >
       {props.children}
+      <MdOutlineArrowForwardIos/>
     </li>
   )
 }

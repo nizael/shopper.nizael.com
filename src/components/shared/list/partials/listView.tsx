@@ -2,8 +2,8 @@
 import { MdOutlineArrowForwardIos } from 'react-icons/md'
 import styles from '../list.module.css'
 interface ListView {
-  headline: JSX.Element
-  description: JSX.Element
+  headline?: JSX.Element
+  description?: JSX.Element
   onClick?(): void
 }
 type Div = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
