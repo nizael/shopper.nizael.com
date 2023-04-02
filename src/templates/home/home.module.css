@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .headeline {
@@ -41,10 +41,8 @@
 
 .smallBanner {
   flex: none;
-  /* height: 196px; */
   width: 100%;
   position: relative;
-  /* overflow-x: hidden; */
 }
 
 .smallBanner img {

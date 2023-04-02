@@ -5,7 +5,6 @@ import { ButtonIcon } from '@components/buttons/button-icon'
 import { MdFavoriteBorder } from "react-icons/md";
 
 interface CardModuleCatalog {
-  onClick?(): void
   data?: product
 }
 
@@ -22,9 +21,19 @@ interface product {
     quantity: number
   }
 }
-export const CardModuleCatalog = (props: CardModuleCatalog) => {
+
+type Div = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+export const CardModuleCatalog = (props: CardModuleCatalog & Div) => {
+
+  const cardModuleCatalogProps = { ...props }
+  const keysCardModuleCatalog: (keyof CardModuleCatalog)[] = ['data']
+  for (const att in keysCardModuleCatalog) {
+    delete cardModuleCatalogProps[keysCardModuleCatalog[att]]
+  }
   return (
-    <div className={styles.cardModuleCatalog}>
+    <div
+      {...cardModuleCatalogProps}
+      className={styles.cardModuleCatalog}>
       <img src={props.data?.imageOfEach}
         alt={props.data?.name} />
       <div className={styles.buttonFloat}>

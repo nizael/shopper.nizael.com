@@ -1,0 +1,21 @@
+
+.select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--br-xl) var(--br-xl) 0 0;
+  background-color: var(--cl-light-secondary);
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 0;
+  flex: none;
+}
+
+.frameSelect {
+  padding: 1rem;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+
+}

@@ -78,7 +78,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .footer {
@@ -89,4 +89,27 @@
   padding: 1rem;
   z-index: 100;
   background-color: var(--cl-light-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.componentsHidden {
+  width: min(100%, 768px);
+  position: absolute;
+  bottom: 0px;
+}
+
+.selectContainer {
+  height: calc(100vh - 80px);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.199);
+  position: absolute;
+  display: flex;
+  flex: none;
+  justify-content: flex-end;
+  flex-direction: column;
+  transition: all .3s;
+  bottom: 80px;
+  overflow: hidden;
+  z-index: 101;
 }

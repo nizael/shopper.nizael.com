@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react'
 import styles from './tags.module.css'
 interface TagPrimary {
   onClick?(): void
@@ -15,16 +14,17 @@ export const TagMd = (props: TagPrimary & Omit<Div, 'onClick'>) => {
     delete tagProps[keysTagPrimary[att]]
   }
 
-  function handleClick() {
+  function handleClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    e.stopPropagation()
     if (props.onClick)
       props?.onClick()
   }
 
   return (
     <div
-      onClick={handleClick}
+      onClick={(e) => handleClick(e)}
       className={`${styles.tagMd} ${styles[props.isSelected ? 'selected' : 'noSelected']}`}
-      {...tagProps}
+    {...tagProps}
     >
       {props.label}
     </div>

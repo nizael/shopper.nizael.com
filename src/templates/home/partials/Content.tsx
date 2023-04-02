@@ -13,9 +13,16 @@ export const Content = () => {
     label: 'Roupas de rua'
   }
   const products = UseHomeStore(s => s.products)
-  function redirect() {
+
+  function redirectToCatalog() {
     push('/catalog')
   }
+  function redirectToProduct() {
+    push('/product')
+  }
+
+
+
   return (
     <div className={styles.content} >
 
@@ -30,10 +37,10 @@ export const Content = () => {
             <Headline2>Ofertas</Headline2>
             <HelpText>Super liquidação </HelpText>
           </div>
-          <HelpText onClick={redirect} style={{ color: 'var(--cl-dark-primary)' }}>Ver todos</HelpText>
+          <HelpText onClick={redirectToCatalog} style={{ color: 'var(--cl-dark-primary)' }}>Ver todos</HelpText>
         </div>
         <div className={styles.frameS}>
-          {products.reverse().map((product, index) => <CardModuleCatalog key={index} data={product} />)}
+          {products.map((product, index) => <CardModuleCatalog onClick={()=>redirectToProduct()} key={index} data={product} />)}
         </div>
       </div>
 
@@ -43,10 +50,10 @@ export const Content = () => {
             <Headline2>Novidades</Headline2>
             <HelpText>Você nunca viu isso antes!</HelpText>
           </div>
-          <HelpText onClick={redirect} style={{ color: 'var(--cl-dark-primary)' }}>Ver todos</HelpText>
+          <HelpText onClick={redirectToCatalog} style={{ color: 'var(--cl-dark-primary)' }}>Ver todos</HelpText>
         </div>
         <div className={styles.frameN}>
-          {products.map((product, index) => <CardModuleCatalog key={index} data={product} />)}
+          {products.map((product, index) => <CardModuleCatalog onClick={()=>redirectToProduct()} key={index} data={product} />)}
         </div>
       </div>
 
@@ -56,9 +63,9 @@ export const Content = () => {
 
         </div>
         <div className={styles.frameLv}>
-          {products.map((product, index) => <CardModuleCatalog key={index} data={product} />)}
+          {products.map((product, index) => <CardModuleCatalog onClick={()=>redirectToProduct()} key={index} data={product} />)}
         </div>
-        <HelpText onClick={redirect} style={{ color: 'var(--cl-dark-primary)' }}>Ver todos</HelpText>
+        <HelpText onClick={redirectToCatalog} style={{ color: 'var(--cl-dark-primary)' }}>Ver todos</HelpText>
       </div>
 
     </div>

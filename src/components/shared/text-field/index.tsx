@@ -1,6 +1,4 @@
-import { ButtonIcon } from '@components/buttons/button-icon'
 import { ChangeEvent, useState } from 'react'
-import { IoClose } from 'react-icons/io5'
 import styles from './textField.module.css'
 interface TextField {
   variant?: 'light' | 'dark' | 'error'
