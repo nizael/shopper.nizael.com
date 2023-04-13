@@ -11,7 +11,7 @@ export interface IProduct {
   created_at: string
   updated_at: string | null
   categoryId: numbernumber
-  Sku: ISku[]
+  Sku: ISkuBySize
   category: ICategory
   subcategory: ISubcategory
 }
@@ -50,4 +50,14 @@ export interface ISku {
   imagesURLs: string[]
   variants: string[]
   productId: number
+}
+
+export interface UseProductStore {
+  product: IProduct | null
+  skuGroupBySize: ISkuBySize | null
+  len: number
+}
+
+export interface ISkuBySize {
+  [size: string]: ISku[]
 }

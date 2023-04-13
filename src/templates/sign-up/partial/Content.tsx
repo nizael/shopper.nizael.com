@@ -9,25 +9,37 @@ import { FaFacebookF } from 'react-icons/fa';
 import { useEffect, useMemo, useState } from 'react'
 import { BiRightArrowAlt } from 'react-icons/bi'
 import styles from '../signUp.module.css'
+import { useSignUpStore } from '../store'
 export const Content = () => {
-  const [valueName, setValueName] = useState('')
-  const [valueEmail, setValueEmail] = useState('')
-  const [valuePassword, setValuePassword] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [nickname, setNickname] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const signUpStore = useSignUpStore()
 
-  useMemo(() => {
-    console.log(valueName)
-    console.log(valueEmail)
-    console.log(valuePassword)
-    setValueEmail(valueEmail)
-  }, [valueEmail, valueName, valuePassword])
+  useEffect(() => {
+    signUpStore.firstName = firstName
+    signUpStore.lastName = lastName
+    signUpStore.nickname = nickname
+    signUpStore.phone = phone
+    signUpStore.email = email
+    signUpStore.password = password
+  }, [email, firstName, lastName, nickname, password, phone, signUpStore])
+console.log('render')
   return (
     <div className={styles.content}>
-      <form action="" className={styles.form}>
+      {/* <form action="" className={styles.form}> */}
         <div className={styles.frameIpt}>
-          <Input value={valueName} label='Nome' onChange={setValueName} />
-          <Input value={valueEmail} label='Email' type='email' onChange={setValueEmail} />
-          <Input value={valuePassword} label='Senha' type='password' onChange={setValuePassword} />
+          <Input value={firstName} label='Nome' onChange={setFirstName} />
+          <Input value={lastName} label='Sobrenome' onChange={setLastName} />
+          <Input value={nickname} label='Usuário' onChange={setNickname} />
+          <Input value={phone} label='Telefone' type='tel' onChange={setPhone} />
+          <Input value={email} label='Email' type='email' onChange={setEmail} />
+          <Input value={password} label='Senha' type='password' onChange={setPassword} />
         </div>
+        
         <div className={styles.frameBtn}>
           <Link href='/login' className={styles.link}>
             <DescriptiveItems>Já tem uma conta?</DescriptiveItems>
@@ -35,7 +47,7 @@ export const Content = () => {
           </Link>
           <ButtonPrimary label='Cadastrar-se' />
         </div>
-      </form>
+      {/* </form> */}
       <div className={styles.socialAccount}>
         <DescriptiveItems>Ou inscreva-se com conta social</DescriptiveItems>
         <div className={styles.frame1}>

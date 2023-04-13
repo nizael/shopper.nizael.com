@@ -6,7 +6,7 @@ import styles from './input.module.css'
 interface Input {
   onChange?(value: string): void
   value?: string
-  type?: 'text' | 'password' | 'email'
+  type?: 'text' | 'password' | 'email' | 'tel'
   variant?: 'error' | 'success'
   errorMessage?: string
   label?: string
@@ -43,13 +43,14 @@ export const Input = (props: Input) => {
           } : undefined}
           htmlFor={props.id || ''} className={styles.label}>{props.label}</label>
         <input
+        {...props}
           required={props.required}
           placeholder={props.placeholder}
           value={props.value}
           onChange={(e) => handleChange(e.currentTarget.value)}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          type={props.type || "text"} id={props.id || ''} />
+          type={props.type || "text"} />
         {state[props.variant!]}
       </div>
       <span style={props.variant === 'error' ? { display: 'block' } : undefined} className={styles.alert}>{props.errorMessage!}</span>

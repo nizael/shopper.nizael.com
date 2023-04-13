@@ -1,14 +1,5 @@
 import { create } from "zustand";
-import { IProduct, ISku } from "./product";
-interface UseProductStore {
-  product: IProduct | null
-  skuGroupBySize: ISkuBySize | null
-  len: number
-}
-
-export interface ISkuBySize {
-  [size: string]: ISku[]
-}
+import { UseProductStore } from "./product";
 
 export const useProductStore = create<UseProductStore>((set, get) => (
   {
