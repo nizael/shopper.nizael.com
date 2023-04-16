@@ -6,48 +6,112 @@ import { DescriptiveItems } from '@components/shared/text'
 import Link from 'next/link'
 import { BsGoogle } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
-import { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiRightArrowAlt } from 'react-icons/bi'
 import styles from '../signUp.module.css'
-import { useSignUpStore } from '../store'
-export const Content = () => {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [nickname, setNickname] = useState('')
-  const [phone, setPhone] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const signUpStore = useSignUpStore()
+import { Apis } from '../../../shared/services/apis'
+import { useRouter } from 'next/navigation'
 
-  useEffect(() => {
-    signUpStore.firstName = firstName
-    signUpStore.lastName = lastName
-    signUpStore.nickname = nickname
-    signUpStore.phone = phone
-    signUpStore.email = email
-    signUpStore.password = password
-  }, [email, firstName, lastName, nickname, password, phone, signUpStore])
-console.log('render')
+export const Content = () => {
+  const redirect = useRouter().push
+  const [formValues, setFormValues] = useState(
+    { firstName: '', lastName: '', nickname: '', phone: '', email: '', password: '' }
+  )
+
+  function handleChange(key: string, value: string) {
+    setFormValues({ ...formValues, [key]: value })
+  }
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    try {
+      await Apis.post('/users/register', formValues)
+      redirect('/login')
+      console.log('ok')
+
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
   return (
     <div className={styles.content}>
-      {/* <form action="" className={styles.form}> */}
+      <form
+        className={styles.form}
+        onSubmit={(event) => handleSubmit(event)}
+      >
         <div className={styles.frameIpt}>
-          <Input value={firstName} label='Nome' onChange={setFirstName} />
-          <Input value={lastName} label='Sobrenome' onChange={setLastName} />
-          <Input value={nickname} label='Usuário' onChange={setNickname} />
-          <Input value={phone} label='Telefone' type='tel' onChange={setPhone} />
-          <Input value={email} label='Email' type='email' onChange={setEmail} />
-          <Input value={password} label='Senha' type='password' onChange={setPassword} />
+          <Input
+            value={formValues?.firstName}
+            label='Nome'
+            type='text'
+            required
+            onChange={
+              (event) =>
+                handleChange('firstName', event.currentTarget.value)
+            }
+          />
+          <Input
+            value={formValues.lastName}
+            label='Sobrenome'
+            type='text'
+            required
+            onChange={
+              (event) =>
+                handleChange('lastName', event.currentTarget.value)
+            }
+          />
+          <Input
+            value={formValues.nickname}
+            label='Usuário'
+            type='text'
+            required
+            onChange={
+              (event) =>
+                handleChange('nickname', event.currentTarget.value)
+            }
+          />
+          <Input
+            value={formValues.email}
+            label='E-mail'
+            type='email'
+            required
+            onChange={
+              (event) =>
+                handleChange('email', event.currentTarget.value)
+            }
+          />
+          <Input
+            value={formValues.phone}
+            label='Telefone'
+            type='tel'
+            required
+            onChange={
+              (event) =>
+                handleChange('phone', event.currentTarget.value)
+            }
+          />
+          <Input
+            value={formValues.phone}
+            label='Senha'
+            type='password'
+            required
+            onChange={
+              (event) =>
+                handleChange('password', event.currentTarget.value)
+            }
+          />
         </div>
-        
+
         <div className={styles.frameBtn}>
           <Link href='/login' className={styles.link}>
             <DescriptiveItems>Já tem uma conta?</DescriptiveItems>
             <BiRightArrowAlt size={24} fill='var(--cl-error)' />
           </Link>
-          <ButtonPrimary label='Cadastrar-se' />
+          <ButtonPrimary type='submit' label='Cadastrar-se' />
         </div>
-      {/* </form> */}
+      </form>
       <div className={styles.socialAccount}>
         <DescriptiveItems>Ou inscreva-se com conta social</DescriptiveItems>
         <div className={styles.frame1}>
@@ -55,6 +119,6 @@ console.log('render')
           <ButtonIcon variant='light' icon={<FaFacebookF size={24} />} />
         </div>
       </div>
-    </div>
+    </div >
   )
 }

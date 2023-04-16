@@ -43,3 +43,9 @@
   align-self: center;
   display: none;
 }
+
+.isFocused {
+  top: 50%;
+  transform: translateY(calc(-100% - .75rem));
+  font-size: 11px;
+}

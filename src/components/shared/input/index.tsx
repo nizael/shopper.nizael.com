@@ -1,59 +1,51 @@
-import { ButtonIcon } from '@components/buttons/button-icon'
-import { useState } from 'react'
-import { IoCloseSharp } from 'react-icons/io5'
-import { MdDone } from 'react-icons/md'
+import React, { useState } from 'react'
 import styles from './input.module.css'
-interface Input {
-  onChange?(value: string): void
-  value?: string
-  type?: 'text' | 'password' | 'email' | 'tel'
-  variant?: 'error' | 'success'
-  errorMessage?: string
+interface IInputProps {
   label?: string
-  id?: string
-  placeholder?: string
-  required?: boolean
+  onBlur?(event?: React.FocusEvent<HTMLInputElement, Element>): void
+  onFocus?(event?: React.FocusEvent<HTMLInputElement, Element>): void
+  sx?: {
+    label?: React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>
+    container?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+  }
 }
+type IInput = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+export const Input = (props: IInputProps & IInput) => {
 
-export const Input = (props: Input) => {
+  const keyInputProps: (keyof IInputProps)[] = ['label', 'onBlur', 'onFocus']
+
+  const inputProps = { ...props }
+  keyInputProps.forEach(element => delete inputProps[element])
   const [isFocused, setIsFocused] = useState(false)
 
-  function handleChange(value: string) {
-    if (props.onChange)
-      props.onChange(value)
+  function handleBlur(event?: React.FocusEvent<HTMLInputElement, Element>) {
+    if (props.onBlur)
+      props.onBlur(event)
 
+    if (!event?.currentTarget.value)
+      setIsFocused(false)
   }
 
-  const state: { [key: string]: JSX.Element } = {
-    error: <ButtonIcon icon={<IoCloseSharp size={24} fill='var(--cl-error)' />} />,
-    success: <MdDone
-      size={24}
-      fill='var(--cl-success)'
-    />
+  function handleFocus(event?: React.FocusEvent<HTMLInputElement, Element>) {
+    if (props.onFocus)
+      props.onFocus(event)
+    setIsFocused(true)
   }
 
   return (
-    <div className={styles.container}>
-      <div className={`${styles.input} ${styles[props.variant!]}`}>
-        <label
-          style={isFocused || props.value ? {
-            top: '50%',
-            transform: 'translateY(calc(-100% - .75rem))',
-            fontSize: '11px'
-          } : undefined}
-          htmlFor={props.id || ''} className={styles.label}>{props.label}</label>
-        <input
-        {...props}
-          required={props.required}
-          placeholder={props.placeholder}
-          value={props.value}
-          onChange={(e) => handleChange(e.currentTarget.value)}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          type={props.type || "text"} />
-        {state[props.variant!]}
-      </div>
-      <span style={props.variant === 'error' ? { display: 'block' } : undefined} className={styles.alert}>{props.errorMessage!}</span>
+    <div
+      className={styles.input}
+      {...props.sx?.container}
+    >
+      <label
+        className={`${styles.label} ${isFocused ? styles.isFocused : undefined}`}
+        {...props.sx?.label}
+      >{props.label}</label>
+      <input
+        onFocus={(event) => handleFocus(event)}
+        onBlur={(event) => handleBlur(event)}
+        {...inputProps}
+      />
     </div>
   )
 }
