@@ -6,35 +6,63 @@ import { DescriptiveItems } from '@components/shared/text'
 import Link from 'next/link'
 import { BsGoogle } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
-import { useEffect, useMemo, useState } from 'react'
+import { useState } from 'react'
 import { BiRightArrowAlt } from 'react-icons/bi'
 import styles from '../login.module.css'
+import { useRouter } from 'next/navigation'
+import { Apis } from '../../../shared/services/apis'
+import { setCookie } from "nookies";
 export const Content = () => {
-  const [valueName, setValueName] = useState('')
-  const [valueEmail, setValueEmail] = useState('')
-  const [valuePassword, setValuePassword] = useState('')
+  const redirect = useRouter().push
+  const [formValues, setFormValues] = useState(
+    { login: '', password: '' }
+  )
+  function handleChange(key: string, value: string) {
+    setFormValues({ ...formValues, [key]: value })
+  }
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    try {
 
-  useMemo(() => {
-    console.log(valueName)
-    console.log(valueEmail)
-    console.log(valuePassword)
-    setValueEmail(valueEmail)
-  }, [valueEmail, valueName, valuePassword])
+      const response = await Apis.post('/sessions/create', formValues)
+      console.log(response.data.token)
+      setCookie({}, 'token', response.data.token)
+      redirect('/')
+
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
   return (
     <div className={styles.content}>
-      <form action="" className={styles.form}>
+      <form
+        className={styles.form}
+        onSubmit={(event) => handleSubmit(event)}
+      >
         <div className={styles.frameIpt}>
-          <Input value={valueEmail} label='Email' type='email' onChange={setValueEmail} />
-          <Input value={valuePassword} label='Senha' type='password' onChange={setValuePassword} />
+          <Input
+            value={formValues.login}
+            label='Email'
+            type='text'
+            onChange={(event) => handleChange('login', event.currentTarget.value)}
+          />
+          <Input
+            value={formValues.password}
+            label='Senha'
+            type='password'
+            onChange={(event) => handleChange('password', event.currentTarget.value)}
+          />
         </div>
         <div className={styles.frameBtn}>
           <Link href='/forgot-password' className={styles.link}>
             <DescriptiveItems>Esqueceu sua senha?</DescriptiveItems>
             <BiRightArrowAlt size={24} fill='var(--cl-error)' />
           </Link>
-          <ButtonPrimary label='Login' />
+          <ButtonPrimary type='submit' label='Login' />
         </div>
       </form>
+
       <div className={styles.socialAccount}>
         <DescriptiveItems>Ou faça login com conta social</DescriptiveItems>
         <div className={styles.frameSa}>
