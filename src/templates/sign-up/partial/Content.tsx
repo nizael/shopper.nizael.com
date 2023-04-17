@@ -93,7 +93,7 @@ export const Content = () => {
             }
           />
           <Input
-            value={formValues.phone}
+            value={formValues.password}
             label='Senha'
             type='password'
             required
